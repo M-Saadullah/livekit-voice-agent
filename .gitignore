@@ -1,0 +1,59 @@
+# Node
+node_modules/
+**/node_modules/
+.npmrc
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite/Build output
+/dist/
+**/dist/
+/.cache/
+**/.cache/
+
+# Environment files
+.env
+**/.env
+.env.*
+**/.env.*
+backend/.env
+backend/.env.*
+frontend/.env
+frontend/.env.* 
+# Logs
+logs
+*.log
+*.log.*
+
+# OS/Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Python
+.venv/
+**/.venv/
+venv/
+**/venv/
+env/
+**/env/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Misc
+*.local
+*.swp
+*.swo
+
+# LiveKit artifacts (if any temporary dumps)
+*.rtc
+
