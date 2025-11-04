@@ -22,7 +22,7 @@ export default function LiveKitVoiceAgent() {
     // Call your backend to generate a token (proxy configured in vite.config.js)
     try {
       console.log('[frontend] requesting token...');
-      const response = await fetch('/api/get-token', {
+      const response = await fetch(`${backendUrl}/api/get-token`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
