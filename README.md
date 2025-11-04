@@ -6,6 +6,35 @@ This project contains a minimal backend for issuing LiveKit access tokens and a 
 - Frontend: React/Vite app at `livekit-voice-agent/frontend`
 - Optional Python agent code at `livekit-voice-agent/livekit-voice-agent`
 
+## Project Structure
+```
+livekit-voice-agent/
+├─ backend/
+│  ├─ server.js               # Express server: token + admin endpoints
+│  ├─ package.json            # Backend deps & scripts
+│  ├─ package-lock.json
+│  └─ .env                    # LIVEKIT_API_KEY/SECRET/HOST (ignored)
+│
+├─ frontend/
+│  ├─ index.html              # Vite entry
+│  ├─ main.jsx                # React bootstrap
+│  ├─ frontend.jsx            # UI logic for joining room, audio, logs
+│  ├─ index.css               # Tailwind base
+│  ├─ package.json            # Frontend deps & scripts
+│  ├─ vite.config.js          # Dev server + /api proxy → 3001
+│  ├─ tailwind.config.js
+│  └─ postcss.config.js
+│
+├─ livekit-voice-agent/       # (optional) Python agent module
+│  ├─ agent.py
+│  ├─ Dockerfile
+│  ├─ pyproject.toml
+│  └─ uv.lock
+│
+├─ .gitignore                 # Ignores node_modules, .env, venv, dist, etc.
+└─ README.md                  # This file
+```
+
 ## Prerequisites
 - Node.js 18+
 - npm 9+
