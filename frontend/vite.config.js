@@ -5,8 +5,10 @@ const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  define: {
+    'process.env': {}  // prevent undefined reference errors
+  },
   server: {
-    port: 3000,
     proxy: {
       '/api': {
         target: backendUrl,
