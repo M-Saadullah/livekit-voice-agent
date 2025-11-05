@@ -1,8 +1,8 @@
 from dotenv import load_dotenv
 
 from livekit import agents
-from livekit.agents import AgentSession, Agent, RoomInputOptions
-from livekit.plugins import noise_cancellation, silero
+from livekit.agents import AgentSession, Agent, RoomInputOptions,RoomOutputOptions
+from livekit.plugins import noise_cancellation, silero,anam
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 
 load_dotenv(".env.local")
@@ -26,6 +26,16 @@ async def entrypoint(ctx: agents.JobContext):
         vad=silero.VAD.load(),
         turn_detection=MultilingualModel(),
     )
+
+    avatar = anam.AvatarSession(
+      persona_config=anam.PersonaConfig(
+         name="Cara",  # Name of the avatar to use.
+         avatarId="d9ebe82e-2f34-4ff6-9632-16cb73e7de08",  # ID of the avatar to use. See "Avatar setup" for details.
+      ),
+    )
+
+
+    await avatar.start(session, room=ctx.room)
 
     await session.start(
         room=ctx.room,
