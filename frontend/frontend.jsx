@@ -25,7 +25,7 @@ export default function LiveKitVoiceAgent() {
   const generateToken = async (room) => {
     try {
       console.log('[frontend] requesting token...');
-      const backendUrl = process.env.VITE_BACKEND_URL;
+      const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001';
       const response = await fetch(`${backendUrl}/api/get-token`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
